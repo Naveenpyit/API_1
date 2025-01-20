@@ -6,6 +6,8 @@ from rest_framework import status
 from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser
 
+def main_page(request):
+    return render(request,'first.html')
 
 @csrf_exempt
 def capi_view(request,id=0):
