@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,37 @@
     <title>Frontend</title>
 </head>
 <body>
-    <h1>Hii, This Is Naveenkumar M</h1>
+    <h1>Course Form </h1>
+    <br>
+    <form id="login" method="POST">
+        <div class="group">
+            <label>Student ID</label>
+            <input id="stud_id" class="box" type="number" placeholder="Enter Student ID">
+        </div>
+        <div class="group">
+            <label>Firstname</label>
+            <input type="text" id="firstname" class="box" placeholder="Enter Firstname">
+        </div>
+        <div class="group">
+            <label>Lastname</label>
+            <input type="text" id="lastname" class="box" placeholder="Enter Lastname">
+        </div>
+        <div class="group">
+            <label>DOB</label>
+            <input type="text" id="dob" class="box" placeholder="Enter DOB">
+        </div>
+        <div class="group">
+            <label>Email</label>
+            <input type="text" id="email" class="box" placeholder="Enter Email">
+        </div>
+        <div class="group">
+            <label>Phone</label>
+            <input type="text" id="phone" class="box" placeholder="Enter Phone">
+        </div>
+        <div class="group">
+            <label>Enrollment Date</label>
+            <input type="text" id="enrolldate" class="box" placeholder="Enter Enroll Date">
+        </div>
+    </form>
 </body>
 </html>
