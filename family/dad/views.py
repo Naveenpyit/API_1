@@ -7,7 +7,6 @@ from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser
 
 
-
 @csrf_exempt
 def capi_view(request,id=0):
     if request.method=='GET':
