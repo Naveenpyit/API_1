@@ -1,7 +1,8 @@
-from .views import capi_view,api_view
+from .views import capi_view,api_view,main_view
 from django.urls import path
 
 urlpatterns=[
+    path('',main_view,name='mainview'),
     path('api/students/',capi_view,name='get&post'),
     path('api/students/<int:id>/',capi_view,name='put&del'),
     path('api/courses/',api_view,name='get&post'),
