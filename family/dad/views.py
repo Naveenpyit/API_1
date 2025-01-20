@@ -123,3 +123,46 @@ def del_view(request,id):
         return JsonResponse({"message":"Course doesn't Exists"},status=404)
 
 
+
+
+
+
+# from django.http import JsonResponse
+# from .models import clgcourses
+# from .serializers import courseserializer
+
+# def get_view(request):
+#     # Get the 'Authorization' token from the request headers
+#     auth_header = request.headers.get('Authorization', None)
+
+#     if not auth_header:
+#         # If the Authorization token is missing, return a 401 Unauthorized response
+#         return JsonResponse({"message": "Authorization token is missing"}, status=401)
+    
+#     # Try to extract the token part from the Authorization header (Bearer <token>)
+#     try:
+#         token = auth_header.split(' ')[1]  
+#         # Optionally, here you can validate the token (for example, using JWT or other methods)
+#         # For now, we'll just check if the token is not empty.
+#         if token == "your_valid_token_here":  # Replace with your actual validation logic
+#             pass  # Token is valid, proceed with the request
+#         else:
+#             # If the token is invalid, return a 401 Unauthorized response
+#             return JsonResponse({"message": "Invalid or expired token"}, status=401)
+#     except IndexError:
+#         # If the format is incorrect (e.g., no space after 'Bearer'), return 401
+#         return JsonResponse({"message": "Invalid Authorization format"}, status=401)
+    
+#     # Now, proceed with the rest of your logic for fetching the courses
+#     cour_id = request.GET.get('id', None)
+#     if cour_id:
+#         try:
+#             cour = clgcourses.objects.get(course_id=cour_id)
+#             cour_serial = courseserializer(cour)
+#             return JsonResponse(cour_serial.data, safe=False)
+#         except clgcourses.DoesNotExist:
+#             return JsonResponse({"message": "Course doesn't exist"}, status=404)
+#     else:
+#         cour = clgcourses.objects.all()
+#         cour_serial = courseserializer(cour, many=True)
+#         return JsonResponse(cour_serial.data, safe=False)
