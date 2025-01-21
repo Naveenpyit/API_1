@@ -128,39 +128,3 @@ def del_view(request,id):
 
 
 
-
-
-
-# def get_view(request):
-#     auth_header = request.headers.get('Authorization', None)
-
-#     if not auth_header:
-#         return JsonResponse({"message": "Authorization token is missing"}, status=401)
-    
-#     
-#     try:
-#         token = auth_header.split(' ')[1]  
-#         
-#         
-#         if token == "your_valid_token_here":  
-#             pass  
-#         else:
-#             
-#             return JsonResponse({"message": "Invalid or expired token"}, status=401)
-#     except IndexError:
-#         
-#         return JsonResponse({"message": "Invalid Authorization format"}, status=401)
-    
-#    
-#     cour_id = request.GET.get('id', None)
-#     if cour_id:
-#         try:
-#             cour = clgcourses.objects.get(course_id=cour_id)
-#             cour_serial = courseserializer(cour)
-#             return JsonResponse(cour_serial.data, safe=False)
-#         except clgcourses.DoesNotExist:
-#             return JsonResponse({"message": "Course doesn't exist"}, status=404)
-#     else:
-#         cour = clgcourses.objects.all()
-#         cour_serial = courseserializer(cour, many=True)
-#         return JsonResponse(cour_serial.data, safe=False)
