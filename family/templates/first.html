@@ -5,14 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend</title>
+    
+    <style>
+        body{
+            background-color: bisque;
+        }
+        h1{
+            text-align: center;
+            font-size: 40px;
+            margin-left: 20px;
+            color: orchid;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            height: 720px;
+            width: 600px;
+            background-color: cornsilk;
+            /* margin: 100px; */
+            margin-left: 700px;
+            border-radius: 40px;
+            border: solid;
+            border-color: black;
+            text-align: center;
+        }    
+        .group{
+            padding: 12px;
+            font-size: 25px;
+            margin-top: 15px;
+        }
+        .box{
+            padding: 12px;
+            border-radius: 30px;
+            width: 55% ;
+            font-size: 20px;
+            margin-left: 20px;
+            color: blue;
+        }
+        #stud_id,#firstname,#lastname{
+            margin-left: 70px;
+        }
+        #dob,#phone,#email{
+            margin-left: 110px;
+        }
+        #submit{
+            padding: 12px;
+            text-align: center;
+            border-radius: 30px;
+            border:solid ;
+            width: 40%;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Course Form </h1>
     <br>
     <form id="login" method="POST">
+        {% csrf_token %}
         <div class="group">
             <label>Student ID</label>
-            <input id="stud_id" class="box" type="number" placeholder="Enter Student ID">
+            <input id="stud_id" class="box" type="text" placeholder="Enter Student ID">
         </div>
         <div class="group">
             <label>Firstname</label>
@@ -42,5 +95,14 @@
             <button id="submit" onclick="posting(event)"> Submit</button>
         </div>
     </form>
+
+    <script>
+        function posting(event){
+            event.preventDefault();
+
+            const id=document.getElementById('stud_id').value;
+            
+        }
+    </script>
 </body>
 </html>
